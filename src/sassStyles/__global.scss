@@ -1,5 +1,6 @@
+@use '../sassStyles/_variables' as var;
 
-.checkimage__icon{
+.checkimage-icon{
     background-color: var.$blueSecundary;
     background-image: url(https://i.imgur.com/hO6HS8U.png);
     background-size:20px;
