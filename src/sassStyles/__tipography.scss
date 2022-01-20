@@ -1,0 +1,27 @@
+@use './variables' as var;
+
+
+h1{
+    font-weight: bold;
+    font-size: 36px;
+    font-style: normal;
+    text-align: center;
+    font-family: var.$fontFamily;
+
+}
+
+h2{
+    font-weight: bold;
+    font-size: 24px;
+    font-style: normal;
+    text-align: center;
+    font-family: var.$fontFamily;
+}
+
+p{
+    font-weight: bold;
+    font-size: 24px;
+    font-style: normal;
+    text-align: center;
+    font-family: var.$fontFamily;
+}
