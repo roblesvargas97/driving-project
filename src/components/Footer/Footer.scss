@@ -1,0 +1,23 @@
+@use '../../sassStyles/_variables' as var;
+
+.Footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 30px;
+    padding: 20px;
+    background: var.$blueGradient;
+
+    .Footer__socialMedia{
+        display: flex;
+        justify-content: space-between ;
+        width: 35%;
+    }
+
+    p{
+        color: var.$white;
+        margin-bottom: 0;
+    }
+}
