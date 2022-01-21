@@ -1,0 +1,18 @@
+@use './_variables' as var;
+
+@mixin button-design($color ) {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    padding: 10px;
+    border-radius: 50px;
+    border: none;
+    font-size: 24px;
+    font-family:var.$fontFamily;
+    font-weight: bold;
+    color: var.$white;
+    background-color: $color;
+
+}
