@@ -3,10 +3,15 @@ import Card from '../../components/Card/Card';
 import HomeLogic from './HomeLogic';
 import '../../sassStyles/__tipography.scss'
 import './Home.scss'
+import initial from '../../initial';
 
 const Home = () => {
 
+    const initialState = initial();
     const {info} = HomeLogic();
+    
+
+    console.log(initialState);
 
     return (
         <section className='Home'>

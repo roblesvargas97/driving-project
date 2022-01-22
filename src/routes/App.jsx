@@ -3,15 +3,15 @@ import { Routes , Route , BrowserRouter } from 'react-router-dom';
 import Footer from '../components/Footer/Footer';
 import Header from '../components/Header/Header';
 import Home from '../pages/Home/Home';
-import initialState from '../initialState';
+import initial from '../initial';
 import './App.scss'
 import Context from '../Context/Context';
 const App = () => {
 
-    const initialState1 = initialState();
+    const initialState = initial();
 
     return (
-        <Context.Provider value={initialState1}>
+        <Context.Provider value={initialState}>
             <BrowserRouter>
                 <Header/>
                 <Routes>
