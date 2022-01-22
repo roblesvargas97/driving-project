@@ -11,7 +11,7 @@ const Home = () => {
     const {info} = HomeLogic();
     
 
-    console.log(initialState);
+  
 
     return (
         <section className='Home'>

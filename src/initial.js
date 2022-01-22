@@ -8,8 +8,6 @@ const initial = ()=>{
 
     const [state , dispatch ] = React.useReducer(reducer , initialState);
 
-    console.log(state);
-
     const onAddName = (value) => dispatch(
         {
             type: actionTypes.addName,
@@ -22,9 +20,9 @@ const initial = ()=>{
     }
 
     const reducerObject = (state, payload) => ({
-        [actionTypes.confirm]:{ 
+        [actionTypes.addName]:{ 
             ...state,
-            nameUser: 'Uriel'
+            nameUser: payload,
         }
     })
 
@@ -39,6 +37,7 @@ const initial = ()=>{
 
     return{
         state,
+        onAddName,
     }
 
 }
