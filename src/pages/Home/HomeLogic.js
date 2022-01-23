@@ -1,6 +1,10 @@
 import React from 'react';
+import initial from '../../initial';
 
 const HomeLogic= ()=> {
+
+    const {onAddName , state} = initial();
+
     const info = [
         {
             text: 'Si aun no te sientes preparado , repasa nuestra guia',
@@ -13,7 +17,16 @@ const HomeLogic= ()=> {
             button: false,
         }
     ];
-    return {info}
+
+    const onSubmit = (data) => {
+        onAddName(data.name);
+    }
+
+    return {
+        info,
+        onSubmit,
+        state,
+    }
 }
 
 export default HomeLogic;

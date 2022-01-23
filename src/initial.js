@@ -8,32 +8,23 @@ const initial = ()=>{
 
     const [state , dispatch ] = React.useReducer(reducer , initialState);
 
-    const onAddName = (value) => dispatch(
-        {
-            type: actionTypes.addName,
-            payload: value,
-        }
-    );
+    const onAddName = (value) => dispatch({
+        type:'ADDNAME',
+        payload: value,
+    });
 
-    const actionTypes = {
-        addName : 'ADDNAME',
+    function reducer(state , action) {
+        switch (action.type) {
+            case 'ADDNAME':
+                return {
+                    nameUser: action.payload,
+                }
+        
+            default:
+                return state; 
+        }
     }
-
-    const reducerObject = (state, payload) => ({
-        [actionTypes.addName]:{ 
-            ...state,
-            nameUser: payload,
-        }
-    })
-
-    const reducer = (state,action) => {
-        if(reducerObject(state)[action.type]){
-            return reducerObject(state)[action.type];
-        }else{
-            return state;
-        }
-
-    }
+    
 
     return{
         state,
