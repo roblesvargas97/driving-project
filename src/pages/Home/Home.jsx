@@ -10,7 +10,7 @@ const Home = () => {
 
     const {register , handleSubmit , formState: {errors} ,} = useForm();
     
-    const {info ,onSubmit , state } = HomeLogic();
+    const {info ,onSubmit  } = HomeLogic();
     
     
     return (
@@ -35,7 +35,6 @@ const Home = () => {
                 {errors.name && 
                     <span className='form__error'>{errors.name.message}</span>
                 }
-                <p>{state.nameUser}</p>
                 <input className='form__submit' type="submit" value=''/>
             </form>
             <div className='Home__Cards-container'>
