@@ -40,8 +40,10 @@
     }
 
     img{
+        align-self: center;
         margin: 20px 0;
-        width: 250px;
+        width: 225px;
+        min-width: 125px;
     }
 }
 
