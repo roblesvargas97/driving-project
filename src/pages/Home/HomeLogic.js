@@ -1,9 +1,9 @@
 import React from 'react';
-import initial from '../../initial';
+import Context from '../../Context/Context';
 
 const HomeLogic= ()=> {
 
-    const {onAddName , state} = initial();
+    const {onAddName , state} = React.useContext(Context);
 
     const info = [
         {
