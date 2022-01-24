@@ -4,6 +4,7 @@ import Footer from '../components/Footer/Footer';
 import Header from '../components/Header/Header';
 import Home from '../pages/Home/Home';
 import initial from '../initial';
+import Welcome from '../pages/Welcome/Welcome';
 import './App.scss'
 import Context from '../Context/Context';
 const App = () => {
@@ -16,6 +17,7 @@ const App = () => {
                 <Header/>
                 <Routes>
                     <Route path='/' element={<Home/>}/>
+                    <Route path='/welcome' element={<Welcome/>} />
                 </Routes>
                 <Footer/>
             </BrowserRouter>
