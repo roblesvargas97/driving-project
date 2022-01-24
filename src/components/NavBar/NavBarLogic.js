@@ -7,12 +7,18 @@ const NavBarLogic = () => {
 
     const onClickButtonCloseMenu = () => {
         onToggleNav(); 
+        scrollUnlock();
     }
 
     const onClickButtonCloseMenuDiv = (e) =>{
         if(e.target.classList.value === 'Container-Menu-Nav'){
             onToggleNav();
+            scrollUnlock();
         }
+    }
+
+    const scrollUnlock = () => {
+       const bodyOverFlow = document.body.style.overflow = 'scroll'
     }
 
     return{

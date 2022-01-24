@@ -6,6 +6,11 @@ const HeaderLogic = () => {
     
     const onClickButtonMenu = () => {
         onToggleNav();
+        scrollLock();
+    }
+
+    const scrollLock = () => {
+        const bodyOverFlow = document.body.style.overflow = 'hidden';
     }
 
     return{
