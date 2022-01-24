@@ -6,6 +6,16 @@
     @extend .card-design;
     margin: 20px 0;
     
+    .Card__img{
+        z-index: 2;
+    }
+
+    .Card__ornament{
+        position: absolute;
+        top: 5%;
+        left: 10%;
+    }
+
     button{
         
         @include button-design(var.$blueSecundary);
