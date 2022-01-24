@@ -1,14 +1,21 @@
 import React from 'react';
 import WelcomeValidatorLogic from './WelcomeValidatorLogic'
-
+import Welcome from '../../pages/Welcome/Welcome';
+import AlertPage from '../../pages/AlertPage/AlertPage';
 const WelcomeValidator = () => {
 
     const {state} = WelcomeValidatorLogic();
 
-    console.log(state);
+    const stateUser = state.nameUser!== '';
 
     return (
-        <h1>Hello World</h1>
+        
+        <React.Fragment>
+            {
+            stateUser? <Welcome/> : <AlertPage/>
+            }
+        </React.Fragment>
+
     );
 }
 

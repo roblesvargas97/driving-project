@@ -1,6 +1,6 @@
 import React from 'react';
 import Context from '../../Context/Context';
-
+import { useNavigate } from 'react-router-dom';
 const HomeLogic= ()=> {
 
     const {onAddName , state} = React.useContext(Context);
@@ -18,14 +18,19 @@ const HomeLogic= ()=> {
         }
     ];
 
+    const history = useNavigate();
+
     const onSubmit = (data) => {
         onAddName(data.name);
+        history('/welcome');
     }
+
 
     return {
         info,
         onSubmit,
         state,
+        
     }
 }
 
