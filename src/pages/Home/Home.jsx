@@ -23,12 +23,14 @@ const Home = () => {
                     type="text" 
                     placeholder='Nombre' 
                     id='Name'
+                    maxLength='12'
                     {
                         ...register('name' , {
                             required: {
                                 value:true,
                                 message: 'El campo es requerido'
-                            }
+                            } ,
+                            maxLength: 12,
                         })
                     }
                 />
