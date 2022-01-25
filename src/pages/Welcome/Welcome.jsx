@@ -1,6 +1,8 @@
 import React from 'react';
 import WelcomeLogic from './WelcomeLogic';
 import {FaRegCheckCircle} from 'react-icons/fa';
+import './Welcome.scss';
+
 const Welcome = () => {
 
     const {state , onClickToTest } = WelcomeLogic();
@@ -16,8 +18,12 @@ const Welcome = () => {
             <h2 className='Welcome__instruction'>
                 -Al final te mostraremos tus resultados.
             </h2>
-            <img src="https://i.imgur.com/l7dIKow.png" alt="Persona Preparandose" />
-            <button type='button' onClick={onClickToTest}>
+            <img 
+                className='Welcome__image' 
+                src="https://i.imgur.com/l7dIKow.png" 
+                alt="Persona Preparandose" 
+            />
+            <button className='Welcome__button' type='button' onClick={onClickToTest}>
                 Empezar
                 <FaRegCheckCircle/>
             </button>
