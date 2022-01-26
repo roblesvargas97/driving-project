@@ -5,6 +5,7 @@ const initial = ()=>{
     const initialState = {
         nameUser: '',
         navState: false,
+        currentQuestion: 0,
     }
 
     const [state , dispatch ] = React.useReducer(reducer , initialState);
@@ -16,6 +17,14 @@ const initial = ()=>{
 
     const onToggleNav = () => dispatch({
         type: 'TOGGLENAV',
+    });
+
+    const onNextQuestion = () => dispatch({
+        type: 'NEXTQUESTION'
+    });
+
+    const onPreviousQuestion = () => dispatch({
+        type: 'PREVIOUSQUESTION'
     });
 
     function reducer(state , action) {
@@ -30,7 +39,16 @@ const initial = ()=>{
                     ...state,
                     navState: !state.navState,
                 }
-           
+            case 'NEXTQUESTION':
+                return{
+                    ...state,
+                    currentQuestion: state.currentQuestion +1,
+                }
+            case 'PREVIOUSQUESTION':
+                return{
+                    ...state,
+                    currentQuestion: state.currentQuestion -1,
+                }
             default:
                 return state; 
         }
@@ -40,6 +58,8 @@ const initial = ()=>{
         state,
         onAddName,
         onToggleNav,
+        onNextQuestion,
+        onPreviousQuestion
     }
 
 }
