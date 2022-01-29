@@ -6,6 +6,9 @@ const initial = ()=>{
         nameUser: '',
         navState: false,
         currentQuestion: 0,
+        stateClick: false,
+        answersUserArray: [],
+
     }
 
     const [state , dispatch ] = React.useReducer(reducer , initialState);
@@ -26,6 +29,18 @@ const initial = ()=>{
     const onPreviousQuestion = () => dispatch({
         type: 'PREVIOUSQUESTION'
     });
+
+    const onStateClick = (value) => dispatch({
+        type: 'STATECLICK',
+        payload: value,
+    });
+
+    const onAddUserAnswersArray = (value) => dispatch({
+        type: 'ADDUSERANSWERSARRAY',
+        payload: value,
+    })
+   
+    
 
     function reducer(state , action) {
         switch (action.type) {
@@ -49,17 +64,31 @@ const initial = ()=>{
                     ...state,
                     currentQuestion: state.currentQuestion -1,
                 }
+            case 'STATECLICK':
+                return{
+                    ...state,
+                    stateClick: action.payload,
+                }
+            case 'ADDUSERANSWERSARRAY':
+                return{
+                    ...state,
+                    answersUserArray: action.payload,
+                }
             default:
                 return state; 
         }
     }
+
     
     return{
         state,
         onAddName,
         onToggleNav,
         onNextQuestion,
-        onPreviousQuestion
+        onPreviousQuestion,
+        onStateClick,
+        onAddUserAnswersArray,
+        
     }
 
 }

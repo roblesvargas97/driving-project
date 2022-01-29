@@ -1,15 +1,19 @@
 import React from 'react';
 import ComponentTestLogic from './ComponentTestLogic';
-import Context from '../../Context/Context';
-
-const {pickRandomQuestions , ArrayQuestions} = ComponentTestLogic();
-
-const {FinalsQuestions} = pickRandomQuestions(ArrayQuestions.length , 20);
+import ButtonsAnswers from '../../components/ButtonsAnswers/ButtonsAnswers';
+import QuestionsGenerator from '../../assets/QuestionsGenerator';
 
 const ComponentTest = () => {
+    
+    const {state ,onNextQuestion,onPreviousQuestion , pickRandomQuestions } = ComponentTestLogic();
+    
+    const {selectedQuestions} = QuestionsGenerator();
 
-    const {state , onNextQuestion , onPreviousQuestion} = React.useContext(Context);
+    const pickedQuestions = selectedQuestions();
 
+    const currentQuestion = pickedQuestions[state.currentQuestion];
+    
+    
     return (
         <section className='Test'>
             <h1>Test</h1>
@@ -17,8 +21,12 @@ const ComponentTest = () => {
             
             <div className='Test__questions'>
 
-            <h2>{FinalsQuestions[state.currentQuestion].question}</h2>
-            
+                <h2>{currentQuestion.question}</h2>
+                
+                <div className='questions__container'>
+                    
+                    <ButtonsAnswers currentQuestion={currentQuestion}/>
+                </div> 
 
             </div>
              
@@ -28,9 +36,18 @@ const ComponentTest = () => {
                     Anterior
                 </button>
 
-                <button type='button' onClick={onNextQuestion} disabled={state.currentQuestion === 19}>
+                {
+                    state.currentQuestion !== 19 &&
+                    <button type='button' onClick={onNextQuestion} disabled={state.currentQuestion === 19 || state.stateClick === false }>
                     siguiente
+                    </button>
+                }
+                {
+                    state.currentQuestion === 19 &&
+                    <button type='button' >
+                    Validar
                 </button>
+                }
             </div>
 
         </section>

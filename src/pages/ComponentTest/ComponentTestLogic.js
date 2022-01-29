@@ -1,45 +1,22 @@
 import React from 'react';
 import DBquestions from '../../assets/DBquestions';
-
+import Context from '../../Context/Context';
 
 const ComponentTestLogic = () => {
 
     const { ArrayQuestions } = DBquestions();
+
+    const {state , onNextQuestion , onPreviousQuestion } = React.useContext(Context);
     
-    
-    const pickRandomQuestions =(totalQuestions , ouputQuestions ) =>{
 
-        let arr = [];
-
-        for(let i = 0 ; i<= totalQuestions ; i++){
-            arr.push(i);
+        return{
+            state ,
+            onNextQuestion,
+            onPreviousQuestion,
+            ArrayQuestions,
+          
         }
 
-        let result = [];
-
-        for (let i = 1; i <= ouputQuestions; i++) {
-            const random = Math.floor(Math.random() * (totalQuestions - i));
-            result.push(arr[random]);
-            arr[random] = arr[totalQuestions - i];
-        }
-
-        let FinalsQuestions = [];
-
-        for (let i = 0; i < result.length; i++) {
-            FinalsQuestions.push(ArrayQuestions[result[i]]);
-        }
-
-        return {
-            FinalsQuestions,
-            
-        };
-       
-    }
-
-    return {
-        pickRandomQuestions,
-        ArrayQuestions,
-    }
 }
 
 export default ComponentTestLogic;
