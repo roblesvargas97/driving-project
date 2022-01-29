@@ -6,8 +6,7 @@ const ButtonsAnswers = ({currentQuestion}) => {
     const {state , onClickButtonQuestion} = ButtonsAnswersLogic();
 
     const answers = currentQuestion.options;
-    
-    console.log(state.answersUserArray);
+
 
     return (
         <React.Fragment>

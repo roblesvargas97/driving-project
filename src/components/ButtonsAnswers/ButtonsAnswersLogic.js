@@ -8,9 +8,9 @@ const ButtonsAnswersLogic = () => {
     
     const currentQuestion = state.currentQuestion;
     
-    // React.useEffect(()=> {
-    //     onStateClick(false);
-    // },[state.currentQuestion])
+    React.useEffect(()=> {
+        onStateClick(false);
+    },[state.currentQuestion])
 
     const  onClickButtonQuestion = (answer) => {
 
