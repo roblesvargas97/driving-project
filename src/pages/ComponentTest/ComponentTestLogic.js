@@ -11,6 +11,25 @@ const ComponentTestLogic = () => {
     
     const {selectedQuestions} = QuestionsGenerator();
 
+    const onValidate = (arrayAnswers , arrayQuestions) =>{
+        
+        let correctAnswers =0;
+        let wrongAnswers=0;
+
+        const arrayQuestionsFiltered = arrayQuestions.map(
+            element => element.options.filter(
+                subElement =>  subElement.correct === true));
+    
+        for(let i=0; i<arrayAnswers.length ; i++){
+            if(arrayAnswers[i] === arrayQuestionsFiltered[i][0].answer ){
+                correctAnswers++;
+            }else{
+                wrongAnswers++;
+            }
+        }         
+        
+    }
+
     const pickedQuestions = selectedQuestions();
 
         return{
@@ -19,6 +38,7 @@ const ComponentTestLogic = () => {
             onPreviousQuestion,
             ArrayQuestions,
             pickedQuestions,
+            onValidate,
           
         }
 

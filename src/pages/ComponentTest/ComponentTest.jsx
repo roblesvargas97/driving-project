@@ -1,33 +1,21 @@
 import React from 'react';
 import ComponentTestLogic from './ComponentTestLogic';
 import ButtonsAnswers from '../../components/ButtonsAnswers/ButtonsAnswers';
-import QuestionsGenerator from '../../assets/QuestionsGenerator';
+
 
 const ComponentTest = () => {
     
-    const {state ,onNextQuestion,onPreviousQuestion , pickRandomQuestions , pickedQuestions } = ComponentTestLogic();
+    const {
+        state,
+        onNextQuestion,
+        onPreviousQuestion, 
+        pickedQuestions, 
+        onValidate 
+    } = ComponentTestLogic();
 
     const userAnswers = state.answersUserArray;
     const currentQuestion = pickedQuestions[state.currentQuestion];
 
-    const onValidate = (arrayAnswers , arrayQuestions) =>{
-        
-        let correctAnswers =0;
-        let wrongAnswers=0;
-
-        const arrayQuestionsFiltered = arrayQuestions.map(
-            element => element.options.filter(
-                subElement =>  subElement.correct === true));
-    
-        for(let i=0; i<arrayAnswers.length ; i++){
-            if(arrayAnswers[i] === arrayQuestionsFiltered[i][0].answer ){
-                correctAnswers++;
-            }else{
-                wrongAnswers++;
-            }
-        }         
-        
-    }
     
     return (
         <section className='Test'>
