@@ -1,7 +1,7 @@
 import React from 'react';
 import ComponentTestLogic from './ComponentTestLogic';
 import ButtonsAnswers from '../../components/ButtonsAnswers/ButtonsAnswers';
-
+import './ComponentTest.scss'
 
 const ComponentTest = () => {
     

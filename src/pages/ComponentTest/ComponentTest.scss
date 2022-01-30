@@ -1,0 +1,10 @@
+@use '../../sassStyles/_global';
+
+
+.Test{
+    @extend .page-global;
+    
+    .questions__container{
+        width: 100%;
+    }
+}
