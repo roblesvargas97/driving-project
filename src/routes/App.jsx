@@ -6,7 +6,7 @@ import Home from '../pages/Home/Home';
 import initial from '../initial';
 import WelcomeValidator from '../components/WelcomeValidator/WelcomeValidator';
 import Context from '../Context/Context';
-import ComponentTest from '../pages/ComponentTest/ComponentTest';
+import ComponentTestValidator from '../components/ComponentTestValidator/ComponentTestValidator';
 import './App.scss'
 const App = () => {
 
@@ -19,7 +19,7 @@ const App = () => {
                 <Routes>
                     <Route path='/' element={<Home/>}/>
                     <Route path='/welcome' element={<WelcomeValidator/>} />
-                    <Route path='/test' element={<ComponentTest/>} />
+                    <Route path='/test' element={<ComponentTestValidator/>} />
                 </Routes>
                 <Footer/>
             </BrowserRouter>

@@ -27,6 +27,17 @@ const QuestionsGenerator = () => {
             FinalsQuestions.push(ArrayQuestions[result[i]]);
         }
     
+        for (let i = 0; i < FinalsQuestions.length; i++) {
+            for(let j = FinalsQuestions[i].options.length-1; j>=0 ; j--){
+
+                let k = Math.floor(Math.random() * (j + 1));
+                let temp = FinalsQuestions[i].options[j];
+                FinalsQuestions[i].options[j] = FinalsQuestions[i].options[k];
+                FinalsQuestions[i].options[k] = temp;
+
+            }
+        }
+
         return FinalsQuestions;
        
     }
