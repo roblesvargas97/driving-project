@@ -7,8 +7,8 @@ const ComponentTest = () => {
     
     const {
         state,
-        onNextQuestion,
-        onPreviousQuestion, 
+        onClickNextQuestion,
+        onClickPreviousQuestion, 
         pickedQuestions, 
         onValidate 
     } = ComponentTestLogic();
@@ -27,12 +27,12 @@ const ComponentTest = () => {
                 </div> 
             </div>
             <div className='Test__buttons'>
-                <button type='button' onClick={onPreviousQuestion} disabled={state.currentQuestion === 0}>
+                <button type='button' onClick={onClickPreviousQuestion} disabled={state.currentQuestion === 0}>
                     Anterior
                 </button>
                 {
                     state.currentQuestion !== 19 &&
-                    <button type='button' onClick={onNextQuestion} disabled={state.currentQuestion === 19 || state.stateClick === false }>
+                    <button type='button' onClick={onClickNextQuestion} disabled={state.currentQuestion === 19 || state.stateClick === false }>
                     siguiente
                     </button>
                 }

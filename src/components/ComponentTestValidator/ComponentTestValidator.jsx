@@ -8,9 +8,10 @@ const ComponentTestValidator = () => {
 
     return (
         <React.Fragment>
-            {
+            {/* {
             stateUser? <ComponentTest/> : <AlertPage/>
-            }
+            } */}
+            <ComponentTest/>
         </React.Fragment>
     );
 }

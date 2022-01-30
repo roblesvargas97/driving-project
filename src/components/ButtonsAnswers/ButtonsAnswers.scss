@@ -1,0 +1,31 @@
+@use '../../sassStyles/_variables' as var;
+@use '../../sassStyles/_mixins' as *;
+
+.ButtonsAnswers{
+
+    &:hover{
+        
+      background-color: var.$blue;  
+    }
+
+    display: block;
+    width: 100%;
+    @include button-design-question(var.$bluePrimary);
+
+}
+
+
+.ButtonAnswer__Question{
+
+    pointer-events: none;
+    p{
+        text-align: left;
+        font-size: 16px;
+        color: var.$white;
+    }
+
+}
+
+.ButtonAnswer__icon{
+    pointer-events: none;
+}

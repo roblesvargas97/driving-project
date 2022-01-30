@@ -30,12 +30,28 @@ const ComponentTestLogic = () => {
         
     }
 
+    const onClickNextQuestion = () => {
+        onNextQuestion();
+        const buttons=[...document.querySelectorAll('button.ButtonsAnswers')];
+        for(let i=0 ; i<buttons.length ; i++){
+            buttons[i].classList.remove('--active');
+        }
+    }
+
+    const onClickPreviousQuestion = () => {
+        onPreviousQuestion();
+        const buttons=[...document.querySelectorAll('button.ButtonsAnswers')];
+        for(let i=0 ; i<buttons.length ; i++){
+            buttons[i].classList.remove('--active');
+        }
+    }
+
     const pickedQuestions = selectedQuestions();
 
         return{
             state ,
-            onNextQuestion,
-            onPreviousQuestion,
+            onClickNextQuestion,
+            onClickPreviousQuestion,
             ArrayQuestions,
             pickedQuestions,
             onValidate,

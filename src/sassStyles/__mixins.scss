@@ -16,3 +16,16 @@
     background-color: $color;
 
 }
+
+@mixin button-design-question($color) {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   margin-bottom:20px;
+   padding: 10px;
+   border-radius: 10px;
+   border: none;
+   background-color: $color;
+   box-shadow: var.$shadow;
+   
+}
