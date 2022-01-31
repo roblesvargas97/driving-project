@@ -15,15 +15,15 @@ const NavBar = () => {
                 <h1>Driving</h1>
                 <img src="https://i.imgur.com/QknyXTS.png" alt="Driving-logo" />
                 <nav className='Nav'>
-                    <Link to='#' >
+                    <Link to='/' >
                         <FaHome size='30px'/> 
                         Inicio
                     </Link>
-                    <Link to='#' >
+                    <Link to='/guide' >
                         <FaBookReader size='30px'/>
                         Guia
                     </Link>
-                    <Link to='#' >
+                    <Link to='/test' >
                         <FaPencilAlt size='30px'/>
                         Prueba o test
                     </Link>

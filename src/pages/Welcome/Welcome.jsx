@@ -20,7 +20,7 @@ const Welcome = () => {
             </h2>
             <img 
                 className='Welcome__image' 
-                src="https://i.imgur.com/l7dIKow.png" 
+                src="https://i.imgur.com/L1iCeus.png" 
                 alt="Persona Preparandose" 
             />
             <button className='Welcome__button' type='button' onClick={onClickToTest}>
