@@ -30,3 +30,25 @@
    cursor: pointer;
    
 }
+
+@mixin button-design-component-test($color){
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    height: 65px;
+    width: 150px;
+    padding: 20px;
+    border: none;
+    font-family: var.$fontFamily;
+    font-weight: bold;
+    font-size: 16px;
+    background-color: $color;
+    box-shadow: var.$shadow;
+    color: var.$white;
+    cursor: pointer;
+}
+
+@mixin button-design-component-test-disabled($color) {
+    background-color: $color;
+    cursor:not-allowed;
+}

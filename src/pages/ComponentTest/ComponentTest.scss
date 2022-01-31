@@ -1,5 +1,6 @@
 @use '../../sassStyles/_global';
-
+@use '../../sassStyles/_variables' as var;
+@use '../../sassStyles/_mixins' as *;
 
 .Test{
     @extend .page-global;
@@ -13,4 +14,29 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
+
+    .Test__buttons__prev , .Test__buttons__next{
+        @include button-design-component-test(var.$orange);
+        transition: all var.$entryTransitionTime;
+        &:disabled{
+            @include button-design-component-test-disabled(var.$orangeLow);
+        }
+    }
+
+    .Test__buttons__validate{
+        @include button-design-component-test(var.$green);
+        border-radius: 0 50px 50px 0 ;
+
+
+    }
+
+    .Test__buttons__prev{
+        border-radius: 50px 0 0 50px;
+    }
+
+    .Test__buttons__next{
+        border-radius: 0 50px 50px 0 ;
+    }
+
+    
 }
