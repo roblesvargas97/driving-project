@@ -3,17 +3,28 @@
 
 .ButtonsAnswers{
 
-    &:hover{
-        
-      background-color: var.$blue;  
-    }
-
     display: block;
     width: 100%;
     @include button-design-question(var.$bluePrimary);
+    transition: all var.$exitTransitionTime;
 
+    &:hover{
+        transition: all var.$entryTransitionTime;
+        background-color: var.$blue;  
+    }
 }
 
+.ButtonsAnswers.--active{
+
+    background-color: var.$green;
+    
+    .ButtonAnswer__icon{
+        transition: all var.$entryTransitionTime;
+        opacity: 1;
+        transform: scale(1);
+
+    }
+}
 
 .ButtonAnswer__Question{
 
@@ -27,5 +38,8 @@
 }
 
 .ButtonAnswer__icon{
+    transition: all var.$exitTransitionTime;
     pointer-events: none;
+    transform: scale(.5);
+    opacity: 0;
 }

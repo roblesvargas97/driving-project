@@ -7,10 +7,11 @@ $green: #00FF47;
 $blueSecundary: #A2D6F9;
 $bluePrimary: rgb(30, 150, 252);
 $bluePrimaryLow: rgbA(30, 150, 252 , 0.5);
-
 $bluePrimaryGradient: linear-gradient(90deg, #1E96FC 0%, #006FCE 100%);
 $orange: #FFC600;
 $shadowHeader: 0px 6px 14px rgba(24, 39, 75, 0.25);
 $shadow:  11px 11px 20px rgba(0, 0, 0, 0.25);
 $fontFamily:'Work Sans', sans-serif;
-$red: #ff0000
+$red: #ff0000;
+$entryTransitionTime: .5s;
+$exitTransitionTime: .9s;

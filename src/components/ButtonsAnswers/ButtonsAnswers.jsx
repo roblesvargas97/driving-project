@@ -1,6 +1,6 @@
 import React from 'react';
 import ButtonsAnswersLogic from './ButtonsAnswersLogic';
-import {BsCircle} from 'react-icons/bs';
+import {BsCircle , BsCheckCircle} from 'react-icons/bs';
 import './ButtonsAnswers.scss';
 const ButtonsAnswers = ({currentQuestion}) => {
 
@@ -20,7 +20,7 @@ const ButtonsAnswers = ({currentQuestion}) => {
                         <p>{answers[0].answer}</p>
                 </div>
                 <div className='ButtonAnswer__icon'>
-                    <BsCircle color='#fff' size='16px'/>
+                    <BsCheckCircle color='#fff' size='30px'/>
                 </div>
             </button>
             <button 
@@ -32,7 +32,7 @@ const ButtonsAnswers = ({currentQuestion}) => {
                         <p>{answers[1].answer}</p>
                 </div>
                 <div className='ButtonAnswer__icon'>
-                    <BsCircle color='#fff' size='16px'/>
+                    <BsCheckCircle color='#fff' size='30px'/>
                 </div>
             </button>
             <button 
@@ -44,7 +44,7 @@ const ButtonsAnswers = ({currentQuestion}) => {
                         <p>{answers[2].answer}</p>
                 </div>
                 <div className='ButtonAnswer__icon'>
-                    <BsCircle color='#fff' size='16px'/>
+                    <BsCheckCircle color='#fff' size='30px'/>
                 </div>
             </button>
         </React.Fragment>
