@@ -1,13 +1,20 @@
 import React from 'react';
 import Context from '../../Context/Context';
+import { useNavigate } from 'react-router-dom';
 import './Congratulations.scss'
 import {AiOutlineReload} from 'react-icons/ai';
 const Congratulations = () => {
 
-    const {state} = React.useContext(Context);
+    const {state , onSetCurrentQuestion} = React.useContext(Context);
+
+    const history = useNavigate();
 
     const correctQuestionsNumber = state.correctQuestionsNumber;
     
+    const onCLickButtonRepeat = () => {
+        history('/test');
+        onSetCurrentQuestion(0);
+    }
 
     return (
         <section className='Congratulations'>
@@ -18,7 +25,7 @@ const Congratulations = () => {
                 'https://i.imgur.com/E3L2WbQ.png':
                 'https://i.imgur.com/88oa6j6.png'}>    
             </img>
-            <button type='button'>Repetir <AiOutlineReload color='#fff' /></button>
+            <button type='button' onClick={onCLickButtonRepeat}>Repetir <AiOutlineReload color='#fff' /></button>
         </section>
     );
 }

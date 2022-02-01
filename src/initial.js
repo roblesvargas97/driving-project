@@ -9,12 +9,12 @@ const initial = ()=>{
         stateClick: false,
         answersUserArray: [],
         correctQuestionsNumber: 0,
-
+        testStatus: false,
     }
 
     const [state , dispatch ] = React.useReducer(reducer , initialState);
 
-    // console.log(state.correctQuestionsNumber);
+    console.log(state.currentQuestion);
 
     const onAddName = (value) => dispatch({
         type:'ADDNAME',
@@ -24,6 +24,11 @@ const initial = ()=>{
     const onToggleNav = () => dispatch({
         type: 'TOGGLENAV',
     });
+
+    const onSetCurrentQuestion = (value) => dispatch({
+        type: 'SETCURRENTQUESTION',
+        payload: value,
+    })
 
     const onNextQuestion = () => dispatch({
         type: 'NEXTQUESTION'
@@ -48,6 +53,10 @@ const initial = ()=>{
         payload: value,
     })
     
+    const onAddTestStatus = () => dispatch({
+        typeof: 'ADDTESTSTATUS',
+        payload: value,
+    })
 
     function reducer(state , action) {
         switch (action.type) {
@@ -60,6 +69,11 @@ const initial = ()=>{
                 return {
                     ...state,
                     navState: !state.navState,
+                }
+            case 'SETCURRENTQUESTION':
+                return{
+                    ...state,
+                    currentQuestion: action.payload,
                 }
             case 'NEXTQUESTION':
                 return{
@@ -86,6 +100,11 @@ const initial = ()=>{
                     ...state,
                     correctQuestionsNumber: action.payload,
                 }
+            case 'ADDTESTSTATUS':
+                return{
+                    ...state,
+                    testStatus: action.payload,
+                }
             default:
                 return state; 
         }
@@ -101,6 +120,8 @@ const initial = ()=>{
         onStateClick,
         onAddUserAnswersArray,
         onCorrectQuestionsNumber,
+        onAddTestStatus,
+        onSetCurrentQuestion,
     }
 
 }
