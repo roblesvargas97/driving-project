@@ -2,12 +2,16 @@ import React from 'react';
 import DBquestions from '../../assets/DBquestions';
 import Context from '../../Context/Context';
 import QuestionsGenerator from '../../assets/QuestionsGenerator';
+import { useNavigate } from 'react-router-dom';
+
 
 const ComponentTestLogic = () => {
 
     const { ArrayQuestions } = DBquestions();
 
-    const {state , onNextQuestion , onPreviousQuestion } = React.useContext(Context);
+    const {state , onNextQuestion , onPreviousQuestion , onCorrectQuestionsNumber } = React.useContext(Context);
+
+    const history = useNavigate();
     
     const {selectedQuestions} = QuestionsGenerator();
 
@@ -27,7 +31,8 @@ const ComponentTestLogic = () => {
                 wrongAnswers++;
             }
         }         
-        
+        onCorrectQuestionsNumber(correctAnswers);
+        history('/congratulations');
     }
 
     const onClickNextQuestion = () => {

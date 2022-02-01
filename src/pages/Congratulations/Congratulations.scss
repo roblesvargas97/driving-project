@@ -1,0 +1,20 @@
+@use '../../sassStyles/_variables' as var;
+@use '../../sassStyles/_global' ;
+@use '../../sassStyles/_mixins' as *;
+
+.Congratulations{
+    @extend .page-global;
+
+    img{
+        width: 500px;
+    }
+
+    button{
+        @include button-design(var.$orange);
+        margin: 20px 0;
+
+        svg{
+            margin-left: 20px;
+        }
+    }
+}

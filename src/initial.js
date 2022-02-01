@@ -8,10 +8,13 @@ const initial = ()=>{
         currentQuestion: 0,
         stateClick: false,
         answersUserArray: [],
+        correctQuestionsNumber: 0,
 
     }
 
     const [state , dispatch ] = React.useReducer(reducer , initialState);
+
+    // console.log(state.correctQuestionsNumber);
 
     const onAddName = (value) => dispatch({
         type:'ADDNAME',
@@ -40,6 +43,10 @@ const initial = ()=>{
         payload: value,
     })
    
+    const onCorrectQuestionsNumber = (value) => dispatch({
+        type: 'ADDCORRECTQUESTIONSNUMBER',
+        payload: value,
+    })
     
 
     function reducer(state , action) {
@@ -74,6 +81,11 @@ const initial = ()=>{
                     ...state,
                     answersUserArray: action.payload,
                 }
+            case 'ADDCORRECTQUESTIONSNUMBER':
+                return{
+                    ...state,
+                    correctQuestionsNumber: action.payload,
+                }
             default:
                 return state; 
         }
@@ -88,7 +100,7 @@ const initial = ()=>{
         onPreviousQuestion,
         onStateClick,
         onAddUserAnswersArray,
-        
+        onCorrectQuestionsNumber,
     }
 
 }
