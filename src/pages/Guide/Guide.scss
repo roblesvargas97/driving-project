@@ -1,0 +1,15 @@
+@use '../../sassStyles/_variables' as var;
+@use '../../sassStyles/_global';
+
+.Guide{
+
+    @extend .page-global;
+
+}
+
+.Guide__questions-container__question{
+    p{
+        color: var.$blue;
+        font-weight: normal;
+    }
+}

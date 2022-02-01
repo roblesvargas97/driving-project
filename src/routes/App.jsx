@@ -8,6 +8,7 @@ import WelcomeValidator from '../components/WelcomeValidator/WelcomeValidator';
 import Context from '../Context/Context';
 import ComponentTestValidator from '../components/ComponentTestValidator/ComponentTestValidator';
 import './App.scss'
+import Guide from '../pages/Guide/Guide';
 const App = () => {
 
     const initialState = initial();
@@ -20,6 +21,7 @@ const App = () => {
                     <Route path='/' element={<Home/>}/>
                     <Route path='/welcome' element={<WelcomeValidator/>} />
                     <Route path='/test' element={<ComponentTestValidator/>} />
+                    <Route path='/guide' element={<Guide/>} />
                 </Routes>
                 <Footer/>
             </BrowserRouter>
