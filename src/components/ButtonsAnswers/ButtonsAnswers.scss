@@ -11,6 +11,7 @@
     &:hover{
         transition: all var.$entryTransitionTime;
         background-color: var.$blue;  
+        box-shadow: var.$shadow;
     }
 }
 

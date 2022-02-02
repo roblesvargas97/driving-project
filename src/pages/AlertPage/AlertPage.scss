@@ -14,5 +14,12 @@
         @include button-design(var.$orange);
         width: 40%;
         margin: 20px 0;
+        transition: all var.$exitTransitionTime;
+
+        &:hover{
+            transition: all var.$entryTransitionTime;
+            background-color: var.$blue;
+            box-shadow: var.$shadow;
+        }
     }
 }

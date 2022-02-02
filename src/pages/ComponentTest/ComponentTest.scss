@@ -22,6 +22,11 @@
     .Test__buttons__prev , .Test__buttons__next{
         @include button-design-component-test(var.$orange);
         transition: all var.$entryTransitionTime;
+
+        &:hover{
+            // background-color: var.$blue;
+            box-shadow: var.$shadow;
+        }
         &:disabled{
             @include button-design-component-test-disabled(var.$orangeLow);
         }

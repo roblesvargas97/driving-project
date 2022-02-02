@@ -12,7 +12,15 @@
     button{
         @include button-design(var.$orange);
         margin: 20px 0;
+        width: 40%;
+        cursor: pointer;
+        transition: all var.$exitTransitionTime;
 
+        &:hover{
+            transition: all var.$entryTransitionTime;
+            background-color: var.$blue;
+            box-shadow: var.$shadow;
+        }
         svg{
             margin-left: 20px;
         }
