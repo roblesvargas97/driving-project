@@ -10,6 +10,7 @@ import ComponentTestValidator from '../components/ComponentTestValidator/Compone
 import './App.scss'
 import Guide from '../pages/Guide/Guide';
 import CongratulationsValidator from '../components/CongratulationsValidator/CongratulationsValidator';
+import NotFound from '../pages/NotFound/NotFound';
 const App = () => {
 
     const initialState = initial();
@@ -24,6 +25,7 @@ const App = () => {
                     <Route path='/test' element={<ComponentTestValidator/>} />
                     <Route path='/guide' element={<Guide/>} />
                     <Route path='/congratulations' element={<CongratulationsValidator/>}/>
+                    <Route path='*' element={<NotFound/>}/>
                 </Routes>
                 <Footer/>
             </BrowserRouter>
