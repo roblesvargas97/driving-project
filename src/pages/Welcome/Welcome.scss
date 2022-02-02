@@ -18,9 +18,16 @@
         @include button-design(var.$orange);
         margin: 20px 0;
         width: 40%;
-        
+        cursor: pointer;
         svg{
             margin-left: 10px;
+        }
+        transition: all var.$exitTransitionTime;
+
+        &:hover{
+            transition: all var.$entryTransitionTime;
+            background-color: var.$blue;
+            box-shadow: var.$shadow;
         }
     }
 }
