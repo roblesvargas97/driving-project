@@ -11,9 +11,10 @@
     height: 15vh;
     box-shadow: var.$shadowHeader;
     background: var.$blueGradient ;
-
+    
     .Header__button{
         display: flex;
+        position: relative;
         place-items: center;
         width: 50px;
         height: 50px;
@@ -21,5 +22,36 @@
         color: var.$white;
         width: 1;
         background-color: transparent;
+        transition: all var.$exitTransitionTime;
+        cursor: pointer;
+
+        &:after{
+            // transition: all var.$exitTransitionTime;
+            opacity: 0;
+        }
+
+        &:hover{
+        transition: all var.$entryTransitionTime;
+
+            transform: scale(1.2);
+
+            &:after{
+                transition: all var.$entryTransitionTime;
+                position: absolute;
+                top: -5px;
+                left: -5px;
+                content: '';
+                width: 120%;
+                height: 120%;
+                border-radius: 50px;
+                background-color: var.$bluePrimary;
+                box-shadow: var.$shadow;
+                z-index: -1;
+                opacity: 1;
+            }
+
+        }
+
+        
     }
 }

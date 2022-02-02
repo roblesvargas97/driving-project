@@ -52,8 +52,12 @@ const initial = ()=>{
     })
     
     const onAddTestStatus = () => dispatch({
-        typeof: 'ADDTESTSTATUS',
+        type: 'ADDTESTSTATUS',
         payload: value,
+    })
+
+    const onRestoreAnswersUserArray = () => dispatch({
+        type: 'RESTOREANSWERSUSERARRAY',
     })
 
     function reducer(state , action) {
@@ -103,6 +107,11 @@ const initial = ()=>{
                     ...state,
                     testStatus: action.payload,
                 }
+            case 'RESTOREANSWERSUSERARRAY':
+                return{
+                    ...state,
+                    answersUserArray: [],
+                }
             default:
                 return state; 
         }
@@ -120,6 +129,7 @@ const initial = ()=>{
         onCorrectQuestionsNumber,
         onAddTestStatus,
         onSetCurrentQuestion,
+        onRestoreAnswersUserArray,
     }
 
 }

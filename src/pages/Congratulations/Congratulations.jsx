@@ -5,7 +5,7 @@ import './Congratulations.scss'
 import {AiOutlineReload} from 'react-icons/ai';
 const Congratulations = () => {
 
-    const {state , onSetCurrentQuestion} = React.useContext(Context);
+    const {state , onSetCurrentQuestion , onRestoreAnswersUserArray} = React.useContext(Context);
 
     const history = useNavigate();
 
@@ -14,6 +14,7 @@ const Congratulations = () => {
     const onCLickButtonRepeat = () => {
         history('/test');
         onSetCurrentQuestion(0);
+        onRestoreAnswersUserArray();
     }
 
     return (
