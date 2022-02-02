@@ -1,0 +1,17 @@
+@use '../../sassStyles/_variables' as var;
+@use '../../sassStyles/_mixins' as *;
+@use '../../sassStyles/_global';
+
+.AlertPage{
+    @extend .page-global;
+
+    img{
+        width: 400px;
+        margin: 20px 0;
+    }
+
+    button{
+        @include button-design(var.$orange);
+        margin: 20px 0;
+    }
+}

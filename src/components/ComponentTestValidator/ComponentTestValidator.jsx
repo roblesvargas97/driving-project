@@ -8,10 +8,13 @@ const ComponentTestValidator = () => {
 
     return (
         <React.Fragment>
-            {
-            stateUser? <ComponentTest/> : <AlertPage/>
-            }
-        </React.Fragment>
+        {
+        stateUser? <ComponentTest/> : <AlertPage 
+                                    message='Lo sentimos aun no has ingresado tu nombre.'
+                                    image = 'https://i.imgur.com/d3SGYcO.png'    
+                                />
+        }
+    </React.Fragment>
     );
 }
 

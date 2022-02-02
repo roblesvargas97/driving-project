@@ -14,8 +14,6 @@ const initial = ()=>{
 
     const [state , dispatch ] = React.useReducer(reducer , initialState);
 
-    console.log(state.currentQuestion);
-
     const onAddName = (value) => dispatch({
         type:'ADDNAME',
         payload: value,
