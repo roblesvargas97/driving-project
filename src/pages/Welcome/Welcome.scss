@@ -17,6 +17,7 @@
     .Welcome__button{
         @include button-design(var.$orange);
         margin: 20px 0;
+        width: 40%;
         
         svg{
             margin-left: 10px;

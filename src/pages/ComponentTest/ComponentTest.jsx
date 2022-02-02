@@ -11,8 +11,13 @@ const ComponentTest = () => {
         onClickNextQuestion,
         onClickPreviousQuestion, 
         pickedQuestions, 
-        onValidate 
+        onValidate ,
+        onSetCurrentQuestion,
     } = ComponentTestLogic();
+
+    React.useEffect(()=> {
+        onSetCurrentQuestion(0);
+    } , [])
 
     const userAnswers = state.answersUserArray;
     const currentQuestion = pickedQuestions[state.currentQuestion];

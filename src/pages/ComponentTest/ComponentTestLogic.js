@@ -9,7 +9,7 @@ const ComponentTestLogic = () => {
 
     const { ArrayQuestions } = DBquestions();
 
-    const {state , onNextQuestion , onPreviousQuestion , onCorrectQuestionsNumber } = React.useContext(Context);
+    const {state , onNextQuestion , onPreviousQuestion , onCorrectQuestionsNumber ,onSetCurrentQuestion } = React.useContext(Context);
 
     const history = useNavigate();
     
@@ -60,6 +60,7 @@ const ComponentTestLogic = () => {
             ArrayQuestions,
             pickedQuestions,
             onValidate,
+            onSetCurrentQuestion,
           
         }
 

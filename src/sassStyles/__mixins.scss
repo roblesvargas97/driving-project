@@ -52,3 +52,9 @@
     background-color: $color;
     cursor:not-allowed;
 }
+
+@mixin for-tablet {
+    @media (min-width: 768px){
+        @content;
+    }
+}

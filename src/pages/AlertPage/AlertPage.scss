@@ -12,6 +12,7 @@
 
     button{
         @include button-design(var.$orange);
+        width: 40%;
         margin: 20px 0;
     }
 }

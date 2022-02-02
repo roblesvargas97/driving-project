@@ -1,5 +1,6 @@
 @use '../../sassStyles/_variables' as var;
 @use '../../sassStyles/_global' as glo;
+@use '../../sassStyles/_mixins' as *;
 
 .Home {
     display: flex;
@@ -28,10 +29,13 @@
     font-weight: bold;
     color: var.$blue;
     background-color: var.$white;
+    transition: all var.$exitTransitionTime;
     
     &:focus{
         box-shadow: var.$shadow;
         outline: 2px solid var.$blue;
+        transition: all var.$entryTransitionTime;
+
     }
 }
 
@@ -61,8 +65,27 @@
     border-radius: 0 50px 50px 0;
     background-color: var.$blueSecundary;
     border: none;
+    transition: all var.$exitTransitionTime;
+    cursor: pointer;
     @extend .checkimage-icon;
+
+
+    &:hover{
+        background-color: var.$blue;
+        transition: all var.$entryTransitionTime;
+    }
 }
 
 
 
+
+
+@include for-tablet {
+ 
+    .Home__Cards-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+}
