@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes , Route , BrowserRouter } from 'react-router-dom';
+import { Routes , Route , HashRouter } from 'react-router-dom';
 import Footer from '../components/Footer/Footer';
 import Header from '../components/Header/Header';
 import Home from '../pages/Home/Home';
@@ -17,7 +17,7 @@ const App = () => {
 
     return (
         <Context.Provider value={initialState}>
-            <BrowserRouter>
+            <HashRouter>
                 <Header/>
                 <Routes>
                     <Route path='/' element={<Home/>}/>
@@ -28,7 +28,7 @@ const App = () => {
                     <Route path='*' element={<NotFound/>}/>
                 </Routes>
                 <Footer/>
-            </BrowserRouter>
+            </HashRouter>
         </Context.Provider>
 
         
